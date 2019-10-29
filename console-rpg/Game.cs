@@ -205,7 +205,29 @@ namespace console_rpg
                 profileTitleUnderline += "-";
             }
             string profileLevel = $"Level: {player.Level}";
-            string profile
+            string profileClass = $"Class: {player.Class}";
+            string profileHealth = $"Health: {player.Health}";
+            string profileArmour = $"Armour: {player.Armour}";
+            string profileEnergy = $"Energy: {player.Energy}";
+            string profileStatsUnderline = profileTitleUnderline;
+            string storyModeYN = player.StoryModeCompleted == true ? "Yes" : "No";
+            string profileStoryModeCompleted = $"Story Mode Completed? {storyModeYN}";
+            string profileStoryModeCompletions = $"Story Mode Completions: {player.StoryModeCompletions}";
+            string profileArenaModeCompletions = $"Arena Mode Completions: {player.ArenaModeCompletions}";
+
+            stringBuilder.Append(profileTitle)
+                .Append(profileTitleUnderline)
+                .Append(profileLevel)
+                .Append(profileClass)
+                .Append(profileHealth)
+                .Append(profileEnergy)
+                .Append(profileStatsUnderline)
+                .Append(profileStoryModeCompleted)
+                .Append(profileStoryModeCompletions)
+                .Append(profileArenaModeCompletions);
+
+            string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            System.IO.Directory.CreateDirectory(docPath + "/console-rpg");
         }
 
         private void StoryMode()

@@ -16,6 +16,19 @@ namespace console_rpg
             get { return this.playerClass; }
             set { this.playerClass = value; }
         }
+        public bool StoryModeCompleted
+        {
+            get { return this.storyModeCompleted; }
+        }
+        public int StoryModeCompletions
+        {
+            get { return this.StoryModeCompletions; }
+        }
+        public int ArenaModeCompletions
+        {
+            get { return this.arenaModeCompletions; }
+        }
+
 
         public Player(int level, string name) : base(level, name)
         {
@@ -24,6 +37,9 @@ namespace console_rpg
         public Player(int level, string name, string playerClass) : base(level, name)
         {
             this.playerClass = playerClass;
+            this.storyModeCompleted = false;
+            this.storyModeCompletions = 0;
+            this.arenaModeCompletions = 1;
         }
     }
 }
