@@ -22,7 +22,7 @@ namespace console_rpg
         }
         public int StoryModeCompletions
         {
-            get { return this.StoryModeCompletions; }
+            get { return this.storyModeCompletions; }
         }
         public int ArenaModeCompletions
         {

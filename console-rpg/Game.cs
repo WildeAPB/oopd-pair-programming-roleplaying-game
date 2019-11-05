@@ -6,7 +6,7 @@ namespace console_rpg
 {
     public class Game  //Game class that handles the "game" part of the game; e.g. menus, gameplay, etc. Individual characters will be handled by other classes.
     {
-        private Player player = new Player(0, null, null);
+        private Player player; // Create a Player variable which we can intantiate later.s
         
         public void Setup() //Setup method. Allows us to grab some data off of the user in order to run the game how they want it.
         {
@@ -42,10 +42,8 @@ namespace console_rpg
               // .KeyChar gets the character of that key rather than using the ConsoleKey of the key pressed.
               // We then take the user's key press and set playerClass accordingly.
 
-            player.Name = playerName;
-            player.Class = playerClass;
-            player.Level = 1;
-            // Finally we set the two class wide variables for playerName & playerClass equal to the ones we got from the user.
+            player = new Player(1, playerName, playerClass);
+            // Finally we create a new instance of Player and pass the variables we got of the user to it.
         }
 
         public void MainMenu() // Basic Method for creating Main Menu the user can interact with.
